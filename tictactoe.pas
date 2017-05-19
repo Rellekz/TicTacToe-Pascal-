@@ -71,6 +71,7 @@ procedure zeigen;
 
 procedure sieg(var win : integer);
   begin
+    if (eins <> '1') and (zwei <> '2') and (drei <> '3') and (vier <> '4') and (funf <> '5') and (secs <> '6') and (sieb <> '7') and (acht <> '8') and (neun <> '9') then win := 3;
     if (eins = 'o') and (zwei = 'o') and (drei = 'o') then win := 1;
     if (vier = 'o') and (funf = 'o') and (secs = 'o') then win := 1;
     if (sieb = 'o') and (acht = 'o') and (neun = 'o') then win := 1;
@@ -110,6 +111,17 @@ begin
     wechsel(spieler);
     zeigen;
   end;
-  writeln('Der Sieger ist Spieler ',gewonnen,'!');
+  clrscr;
+  writeln('    ',sieb,' | ',acht,' | ',neun,'  ');
+  writeln('   ---|---|---');
+  writeln('    ',vier,' | ',funf,' | ',secs,'  ');
+  writeln('   ---|---|---');
+  writeln('    ',eins,' | ',zwei,' | ',drei,'  ');
+  writeln;
+  writeln('-----------------');
+  writeln;
+  writeln;
+  if (gewonnen = 1) or (gewonnen = 2) then writeln('Der Sieger ist Spieler ',gewonnen,'!');
+  if gewonnen = 3 then writeln('Unentschieden!');
   readln;
-end.
+end.       
